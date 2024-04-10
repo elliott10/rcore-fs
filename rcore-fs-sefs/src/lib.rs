@@ -489,7 +489,7 @@ impl SEFS {
             let block_id = Self::get_freemap_block_id_of_group(i);
             meta_file.read_block(
                 block_id,
-                &mut free_map.as_mut_raw_slice()[BLKSIZE * i..BLKSIZE * (i + 1)],
+                &mut free_map.as_mut_slice()[BLKSIZE * i..BLKSIZE * (i + 1)],
             )?;
         }
 
@@ -739,7 +739,7 @@ impl AsBuf for BitVec<Lsb0, u8> {
         self.as_raw_slice()
     }
     fn as_buf_mut(&mut self) -> &mut [u8] {
-        self.as_mut_raw_slice()
+        self.as_mut_slice()
     }
 }
 

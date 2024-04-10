@@ -1020,7 +1020,7 @@ impl AsBuf for BitVec<Lsb0, u8> {
         self.as_raw_slice()
     }
     fn as_buf_mut(&mut self) -> &mut [u8] {
-        self.as_mut_raw_slice()
+        self.as_mut_slice()
     }
 }
 
